@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agilebrands.in/sitemap.xml
