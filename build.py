@@ -84,7 +84,7 @@ ICON={'brand':'<path d="M4 20 L10 12 L14 16 L20 6"/><path d="M15 6 H20 V11"/>',
 def ic(k): return f'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F2A93B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICON[k]}</svg>'
 
 EPS=[('Everyone is launching.','A bird’s-eye view of a world where everyone innovates'),('Same wave, a thousand products.','Why everyone rides the same trends'),('The tweak economy.','How brands stand out on a crowded shelf'),('Expensive lessons.','Every big failure starts as an idea someone believed in'),('What winners do differently.','The surprising answer: it’s rarely the idea')]
-eps=''.join(f'<a class="ep" href="{YT}" target="_blank" rel="noopener"><img src="/img/ie{i+1}.jpg" alt="Episode {i+1}: {t}" width="640" height="360" loading="lazy" style="aspect-ratio:16/9;width:100%;object-fit:cover"><span class="meta"><b style="color:var(--ink);display:block;font-size:15px">Ep {i+1} · {t.rstrip(".")}</b>{s}</span></a>' for i,(t,s) in enumerate(EPS))
+eps=''.join(f'<a class="ep" href="{YT}" target="_blank" rel="noopener"><img src="/img/ie{i+1}.jpg" alt="Episode {i+1}: {t}" width="640" height="360" loading="lazy" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover"><span class="meta"><b style="color:var(--ink);display:block;font-size:15px">Ep {i+1} · {t.rstrip(".")}</b>{s}</span></a>' for i,(t,s) in enumerate(EPS))
 
 INDEX=head('Agile Brands · A Brand & Innovation Academy','Advanced FMCG marketing lessons that aren’t taught in classrooms: brand, innovation and quick commerce, taught the way they’re practised. First course: Phase-Gate Innovation.','/')+header()+f'''
 <section class="hero"><div class="wrap">
