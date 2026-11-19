@@ -30,7 +30,7 @@ def head(title,desc,path):
 '''
 
 def header(cta=True,links=None):
-    links=links or [('/#courses','Courses'),('/#who','Who it’s for'),('/#pricing','Pricing'),('/#youtube','Free on YouTube')]
+    links=links or [('/#courses','Courses'),('/#who','Who it’s for'),('/#pricing','Pricing'),('/#youtube','Free on YouTube'),('/contact.html','Partner')]
     nav=''.join(f'<a href="{h}">{t}</a>' for h,t in links)
     btn='<a class="btn btn-p" href="#" data-waitlist="Phase-Gate Innovation" data-label="Join the Phase-Gate waitlist">Join the waitlist</a>' if cta else ''
     return f'''<header class="hdr"><div class="wrap">
@@ -44,7 +44,7 @@ FOOT=f'''</main>
 <footer class="ftr"><div class="wrap">
 <div style="max-width:320px"><a class="brand" href="/"><img src="/img/mark.svg" alt="" width="58" height="34"><span><b>Agile Brands</b><small>A Brand &amp; Innovation Academy</small></span></a>
 <p style="margin-top:14px">Real business cases, seen through a real marketing lens.</p></div>
-<div><h4>Courses</h4><ul><li><a href="/phase-gate.html">Phase-Gate Innovation</a></li><li><a href="/#courses">Demand Spaces · soon</a></li><li><a href="/#courses">Ecom Listings &amp; Campaigning · soon</a></li></ul></div>
+<div><h4>Courses</h4><ul><li><a href="/phase-gate.html">Phase-Gate Innovation</a></li><li><a href="/#courses">Demand Spaces · soon</a></li><li><a href="/#courses">Digital Commerce: The 4S of the New-Age Consumer · soon</a></li></ul></div>
 <div><h4>Follow</h4><ul><li><a href="{YT}" rel="noopener" target="_blank">YouTube · @Agile_Brands</a></li><li><a href="{IG}" rel="noopener" target="_blank">Instagram · @_agilebrands</a></li></ul></div>
 <div><h4>Contact</h4><ul><li><a href="mailto:learning@agilebrands.in">learning@agilebrands.in</a></li><li><a href="mailto:partner@agilebrands.in">Become a partner · partner@agilebrands.in</a></li><li><a href="/contact.html">Contact us</a></li></ul></div>
 <div><h4>Policies</h4><ul><li><a href="/terms.html">Terms of use</a></li><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/refunds.html">Refund &amp; cancellation</a></li><li><a href="/delivery.html">Delivery policy</a></li></ul></div>
@@ -56,11 +56,11 @@ FOOT=f'''</main>
 <div class="form stack">
 <p class="kick">Launching December 2026</p>
 <h3 id="wl-title">Join the waitlist</h3>
-<p class="mut" style="font-size:15px">We'll email you the day enrolment opens. Nothing else.</p>
+<p class="mut" style="font-size:15px">Be first in. We’ll email you the day enrolment opens, and nothing else.</p>
 <form class="stack" style="gap:12px">
 <label>Name<input name="name" required autocomplete="name" maxlength="80"></label>
 <label>Email<input name="email" type="email" required autocomplete="email" maxlength="120"></label>
-<label>Interested in<select name="course"><option>Phase-Gate Innovation</option><option>Demand Spaces</option><option>Ecom Listings &amp; Campaigning</option><option>All Agile Brands courses</option></select></label>
+<label>Interested in<select name="course"><option>Phase-Gate Innovation</option><option>Demand Spaces</option><option>Digital Commerce: The 4S of the New-Age Consumer</option><option>All Agile Brands courses</option></select></label>
 <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button class="btn btn-p" type="submit">Join the waitlist</button>
 <p class="err" style="color:#F4ABA3;font-size:14px">That didn't go through. Please try again, or write to learning@agilebrands.in.</p>
@@ -70,7 +70,7 @@ FOOT=f'''</main>
 <div class="ok stack" style="flex-direction:column">
 <p class="kick">You're on the list</p>
 <h3>Thank you</h3>
-<p class="mut">We'll write to you the day enrolment opens. Meanwhile, the free episodes are on <a href="{YT}" target="_blank" rel="noopener">YouTube</a>.</p>
+<p class="mut">We'll write to you the day enrolment opens. Till then, catch the free sessions on <a href="{YT}" target="_blank" rel="noopener">YouTube</a>.</p>
 <button class="btn btn-o" type="button" data-close>Done</button>
 </div>
 </div></div>
@@ -83,69 +83,69 @@ ICON={'brand':'<path d="M4 20 L10 12 L14 16 L20 6"/><path d="M15 6 H20 V11"/>',
 'd2c':'<path d="M4 8 H20 L19 20 H5 Z"/><path d="M9 8 V6 A3 3 0 0 1 15 6 V8"/>'}
 def ic(k): return f'<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F2A93B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICON[k]}</svg>'
 
-EPS=[('Everyone is launching.','A bird’s-eye view of a world where everyone innovates'),('Same wave, a thousand products.','Why everyone rides the same trends'),('The tweak economy.','How brands stand out on a crowded shelf'),('Expensive lessons.','Every big failure starts as an idea someone believed in'),('What winners do differently.','The surprising answer: it’s rarely the idea')]
+EPS=[('Everyone is launching.','95% of new launches fail. So why is everyone launching?'),('Same wave, a thousand products.','India’s obsession with protein, and who actually wins it'),('The tweak economy.','Same biscuit, new story: how brands stand out on a crowded shelf'),('Expensive lessons.','Smart people, expensive flops, and the pattern behind them'),('What winners do differently.','Kodak had it first. Why the idea is rarely the edge')]
 eps=''.join(f'<a class="ep" href="{YT}" target="_blank" rel="noopener"><img src="/img/ie{i+1}.jpg" alt="Episode {i+1}: {t}" width="640" height="360" loading="lazy" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover"><span class="meta"><b style="color:var(--ink);display:block;font-size:15px">Ep {i+1} · {t.rstrip(".")}</b>{s}</span></a>' for i,(t,s) in enumerate(EPS))
 
-INDEX=head('Agile Brands · A Brand & Innovation Academy','Advanced FMCG marketing lessons that aren’t taught in classrooms: brand, innovation and quick commerce, taught the way they’re practised. First course: Phase-Gate Innovation.','/')+header()+f'''
+INDEX=head('Agile Brands · A Brand & Innovation Academy','Advanced FMCG marketing lessons that aren’t taught in classrooms: real case studies, real insights and practical frameworks. Step up your marketing game and learn the language global brands speak.','/')+header()+f'''
 <section class="hero"><div class="wrap">
 <div class="hero-l">
 <p class="kick">An FMCG marketing academy</p>
 <h1>Advanced marketing lessons that aren’t taught in classrooms.</h1>
-<p class="lead">Brand, innovation and quick commerce, taught the way they’re actually practised in FMCG. Real business cases, seen through a real marketing lens.</p>
-<div class="row"><span class="chip">Brand</span><span class="chip">Innovation</span><span class="chip">Quick commerce</span></div>
-<div class="row" style="gap:14px;margin-top:6px"><a class="btn btn-p" href="/phase-gate.html">See the first course</a><a class="btn btn-o" href="#youtube">Watch free episodes</a></div>
+<p class="lead">Brand, innovation and digital commerce, taught the way they’re actually practised in FMCG. Real business cases, seen through a real marketing lens.</p>
+<div class="row"><span class="chip">Brand</span><span class="chip">Innovation</span><span class="chip">Digital commerce</span></div>
+<div class="row" style="gap:14px;margin-top:6px"><a class="btn btn-p" href="/phase-gate.html">Explore Phase-Gate</a><a class="btn btn-o" href="#youtube">Watch free sessions</a></div>
 </div>
 <div class="hero-r"><a class="trailer" href="/phase-gate.html" aria-label="Phase-Gate Innovation course"><img src="/img/trailer_thumb.jpg" alt="Phase-Gate Innovation: an idea passing through four gates, with Go, Redo, Hold and Kill decisions" width="1280" height="720"><span class="shade"></span><span class="cap"><span>Course 01 · Phase-Gate Innovation</span><small>DEC 2026</small></span></a></div>
 </div></section>
 
 <section id="courses" class="band"><div class="wrap stack" style="gap:32px">
-<div class="stack" style="gap:10px"><p class="kick">Courses</p><h2>One course at a time, built to be used at work</h2></div>
+<div class="stack" style="gap:10px"><p class="kick">Courses</p><h2>One course at a time, built for on-the-job application</h2></div>
 <div class="grid3">
-<article class="card course"><span class="tag next">LAUNCHING DEC 2026</span><span class="num">COURSE 01</span><h3>Phase-Gate Innovation</h3><p>Decide which launches deserve to reach the shelf, before a senior opinion carries them there.</p><a class="lnk" href="/phase-gate.html">View course →</a></article>
-<article class="card course"><span class="tag soon">COMING SOON</span><span class="num">COURSE 02</span><h3>Demand Spaces</h3><p>Find where your brand can really win.</p><button class="lnk" type="button" data-waitlist="Demand Spaces" data-label="Get notified: Demand Spaces">Notify me at launch →</button></article>
-<article class="card course"><span class="tag soon">COMING SOON</span><span class="num">COURSE 03</span><h3>Ecom Listings &amp; Campaigning</h3><p>Win the digital and quick-commerce shelf.</p><button class="lnk" type="button" data-waitlist="Ecom Listings &amp; Campaigning" data-label="Get notified: Ecom Listings &amp; Campaigning">Notify me at launch →</button></article>
+<article class="card course"><span class="tag next">LAUNCHING DEC 2026</span><span class="num">COURSE 01</span><h3>Phase-Gate Innovation</h3><p>From catching a voice to reaching the shelf: what it takes to launch successful products.</p><a class="lnk" href="/phase-gate.html">View course →</a></article>
+<article class="card course"><span class="tag soon">COMING SOON</span><span class="num">COURSE 02</span><h3>Demand Spaces</h3><p>Re-imagine consumer psychology and find the spaces where your brand can win.</p><button class="lnk" type="button" data-waitlist="Demand Spaces" data-label="Get notified: Demand Spaces">Notify me at launch →</button></article>
+<article class="card course"><span class="tag soon">COMING SOON</span><span class="num">COURSE 03</span><h3>Digital Commerce: The 4S of the New-Age Consumer</h3><p>Crack the rules of new-age commerce and win the digital shelf.</p><button class="lnk" type="button" data-waitlist="Digital Commerce: The 4S of the New-Age Consumer" data-label="Get notified: Digital Commerce">Notify me at launch →</button></article>
 </div></div></section>
 
 <section id="who"><div class="wrap stack" style="gap:28px">
-<div class="stack" style="gap:10px"><p class="kick">Who it’s for</p><h2>Built for the people who make brands move</h2><p class="mut">Tap a role to see what it gets you.</p></div>
+<div class="stack" style="gap:10px"><p class="kick">Who it’s for</p><h2>Built for people who want to build brands</h2><p style="font-weight:700;color:var(--amb)">Tap a role to see what it gets you.</p></div>
 <div class="roles">
 <button class="role" type="button" aria-pressed="false" data-panel="r1">{ic('brand')}Brand &amp; marketing managers</button>
 <button class="role" type="button" aria-pressed="false" data-panel="r2">{ic('rd')}Innovation &amp; R&amp;D teams</button>
 <button class="role" type="button" aria-pressed="false" data-panel="r3">{ic('d2c')}D2C founders &amp; entrepreneurs</button>
 </div>
-<div class="card rpanel" id="r1"><h3>Brand &amp; marketing managers</h3><p class="mut" style="margin-top:8px">You own the launch calendar, the brand story and the numbers behind them. These lessons give you the decision tools that sit behind the job, not the textbook version of it.</p><ul><li>Run gate reviews that end in a clear call</li><li>Read demand before you brief a new product</li><li>Plan listings and campaigns for the digital shelf</li></ul></div>
-<div class="card rpanel" id="r2"><h3>Innovation &amp; R&amp;D teams</h3><p class="mut" style="margin-top:8px">Overloaded with requests, many of which will never reach the market. Learn how the business side decides, so the right projects reach your bench and the wrong ones stop early.</p><ul><li>Filter briefs early with clear gate criteria</li><li>Speak the language of the business case</li><li>Spend lab time on projects with a real path to shelf</li></ul></div>
-<div class="card rpanel" id="r3"><h3>D2C founders &amp; entrepreneurs</h3><p class="mut" style="margin-top:8px">Every launch bet is your own money, so every call has to count. Get the processes large FMCG companies use, sized for a team of a few people.</p><ul><li>Launch with a decision process, not a hunch</li><li>Pick the listings and campaigns that convert</li><li>Learn from real brand cases, decision by decision</li></ul></div>
+<div class="card rpanel" id="r1"><h3>Brand &amp; marketing managers</h3><p class="mut" style="margin-top:8px">Switching into marketing, or ready for a step up in your marketing role? Get the decision-making tools and the language to stand your ground.</p><ul><li>Learn how ideas come to life and how the innovation cycle works</li><li>Re-imagine consumer psychology with demand spaces</li><li>Get equipped with the rules of new-age commerce</li></ul></div>
+<div class="card rpanel" id="r2"><h3>Innovation &amp; R&amp;D teams</h3><p class="mut" style="margin-top:8px">Don’t just do the benchwork: have a voice in what to build, how to build it and why.</p><ul><li>Run end-to-end product development cycles and manage stakeholders</li><li>Speak the language of the business, from spec sheet to balance sheet</li><li>Open a path to leadership with product and consumer expertise</li></ul></div>
+<div class="card rpanel" id="r3"><h3>D2C founders &amp; entrepreneurs</h3><p class="mut" style="margin-top:8px">Every launch bet is your own money, so every call has to count. A small budget doesn’t mean less accuracy: get the methods large FMCG companies use, sized for small teams.</p><ul><li>Launch with a decision process, not a hunch</li><li>Pick the listings and campaigns that convert</li><li>Borrow big-brand playbooks without the big-brand budget</li></ul></div>
 </div></section>
 
 <section id="pricing" class="band"><div class="wrap stack" style="gap:28px">
-<div class="stack" style="gap:10px"><p class="kick">Pricing</p><h2>Start with the masterclass, or take the whole course</h2></div>
-<p class="note">Enrolment opens in December 2026. Join the waitlist and we'll email you the day it does.</p>
+<div class="stack" style="gap:10px"><p class="kick">Pricing</p><h2>Start with the masterclass or take the whole course</h2></div>
+<p class="note">Enrolment opens in December 2026. Join the waitlist and be the first in.</p>
 <div class="grid3">
-<div class="card price"><span style="font-weight:700;font-size:18px">Masterclass</span><span class="amt">₹449</span><span class="mut2" style="font-size:14px">per course · one-time</span><ul><li>About an hour of lessons</li><li>A quiz after every gate</li><li>Watch at your own pace</li></ul><a class="btn btn-o" href="#" data-waitlist="Phase-Gate Innovation" data-label="Join the Phase-Gate waitlist">Join the waitlist</a></div>
-<div class="card price"><span style="font-weight:700;font-size:18px">Full course</span><span class="amt">₹1,550</span><span class="mut2" style="font-size:14px">per course · one-time</span><ul><li>Masterclass included</li><li>Every deep-dive episode for the course</li><li>Downloadable templates</li></ul><a class="btn btn-p" href="#" data-waitlist="Phase-Gate Innovation" data-label="Join the Phase-Gate waitlist">Join the waitlist</a></div>
+<div class="card price"><span style="font-weight:700;font-size:18px">Masterclass</span><span class="amt">₹449</span><span class="mut2" style="font-size:14px">per class · one-time</span><ul><li>1 hour per masterclass</li><li>Built-in quizzes and downloadable material</li><li>Watch at your own pace</li></ul><a class="btn btn-o" href="#" data-waitlist="Phase-Gate Innovation" data-label="Join the Phase-Gate waitlist">Join the waitlist</a></div>
+<div class="card price"><span style="font-weight:700;font-size:18px">Full course</span><span class="amt">₹1,550</span><span class="mut2" style="font-size:14px">per course · one-time</span><ul><li>Full masterclass</li><li>Deep-dive sessions on every topic covered in masterclass</li><li>Work-ready templates and toolkits</li></ul><a class="btn btn-p" href="#" data-waitlist="Phase-Gate Innovation" data-label="Join the Phase-Gate waitlist">Join the waitlist</a></div>
 </div>
 <p class="mut" style="font-size:15px">Started with the masterclass? Upgrade to the full course any time and pay only the difference.</p>
 </div></section>
 
 <section id="youtube"><div class="wrap stack" style="gap:28px">
-<div class="row" style="justify-content:space-between;gap:16px"><div class="stack" style="gap:10px"><p class="kick">Free on YouTube</p><h2>The Innovation Economy</h2><p class="mut">Five short episodes on how India’s brands launch, compete and win.</p></div><a class="btn btn-o" href="{YT}" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+<div class="row" style="justify-content:space-between;gap:16px"><div class="stack" style="gap:10px"><p class="kick">Free short sessions on YouTube</p><h2>The Innovation Economy</h2><p class="mut">Five short episodes on how India’s brands launch, compete and win.</p></div><a class="btn btn-o" href="{YT}" target="_blank" rel="noopener">Watch on YouTube →</a></div>
 <div class="eps">{eps}</div>
 </div></section>
 '''+FOOT
 
-LESS=[('01','Introduction · Every company is launching','5:50'),('02','Gate 1 · Consumer: do people actually want it?','12:55'),('03','Gate 2 · Business: can we make money making it?','13:55'),('04','Gate 3 · Make: can we make it at scale?','8:05'),('05','Gate 4 · Launch: can we sell it, and keep selling it?','18:12'),('06','Summary · putting the gates to work','4:30')]
+LESS=[('01','Introduction · Every company is launching','5:50'),('02','Gate 1 · Consumer: do people actually want it?','12:56'),('03','Gate 2 · Business: can we make money making it?','13:55'),('04','Gate 3 · Make: can we make it at scale?','8:05'),('05','Gate 4 · Launch: can we sell it, and keep selling it?','18:12'),('06','Summary · putting the gates to work','4:30')]
 lessons=''.join(f'<li><span class="n">{n}</span><span class="t">{t}</span><span class="d">{d}</span></li>' for n,t,d in LESS)
 DEEP=[('Gate 1 deep dive','Consumer'),('Gate 2 deep dive','Business'),('Gate 3 deep dive','Make'),('Gate 4 deep dive','Launch'),('The gating process','2-, 3- or 4-gate routing, and when to use which')]
 deep=''.join(f'<li class="dash"><span class="n">+</span><span class="t">{a}<span class="mut2" style="font-weight:500"> · {b}</span></span></li>' for a,b in DEEP)
 
-PG=head('Phase-Gate Innovation · Agile Brands','Decide which launches deserve to reach the shelf. A one-hour Phase-Gate masterclass and a full course with a deep dive on every gate. Launching December 2026.','/phase-gate.html')+header(links=[('/','← All courses'),('#curriculum','Curriculum'),('#pricing','Pricing'),('#faq','FAQ')])+f'''
+PG=head('Phase-Gate Innovation · Agile Brands','From catching a voice to reaching the shelf: what it takes to launch successful products. A one-hour Phase-Gate masterclass, plus a deep dive on every gate. Launching December 2026.','/phase-gate.html')+header(links=[('/','← All courses'),('#curriculum','Curriculum'),('#pricing','Pricing'),('#faq','FAQ')])+f'''
 <section class="hero"><div class="wrap">
 <div class="hero-l">
 <span class="pill-l">LAUNCHING DECEMBER 2026</span>
 <p class="kick">Course 01 · Phase-Gate Innovation</p>
 <h1>Every company is launching new products. Few decide well which ones deserve to.</h1>
-<p class="lead">Phase-Gate kills the bad ones before a senior opinion carries them all the way to shelf. This course takes you through every gate.</p>
+<p class="lead">From catching a voice to reaching the shelf: what it takes to launch successful products.</p>
 <div class="row"><span class="chip">Gates 1–4</span><span class="chip">Quiz after every gate</span><span class="chip">Real FMCG cases</span></div>
 <div class="row" style="gap:14px;margin-top:4px"><a class="btn btn-p" href="#" data-waitlist="Phase-Gate Innovation" data-label="Join the Phase-Gate waitlist">Join the waitlist</a><span class="mut2" style="font-size:14px">From ₹449</span></div>
 </div>
